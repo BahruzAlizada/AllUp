@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Allup.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Allup.DAL
 {
@@ -8,5 +9,7 @@ namespace Allup.DAL
         {
             
         }
+
+        public DbSet<About> Abouts { get; set; }
     }
 }
