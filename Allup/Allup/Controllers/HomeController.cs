@@ -1,5 +1,8 @@
-﻿using Allup.Models;
+﻿using Allup.DAL;
+using Allup.Models;
+using Allup.ViewsModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,16 +14,20 @@ namespace Allup.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly ILogger<HomeController> _logger;
+		private readonly AppDbContext _db;
 
-		public HomeController(ILogger<HomeController> logger)
-		{
-			_logger = logger;
-		}
+        public HomeController(AppDbContext db)
+        {
+			_db = db;
+        }
 
-		public IActionResult Index()
+        public async Task<IActionResult> Index()
 		{
-			return View();
+			HomeVM homeVM = new HomeVM
+			{
+				Categories = await _db.Categories.Where(x=>x.IsMain).ToListAsync()
+			};
+			return View(homeVM);
 		}
 
 		public IActionResult Privacy()

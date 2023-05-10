@@ -19,7 +19,7 @@ namespace Allup.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            List<Testimonial> testimonials = await _context.Testimonials.OrderByDescending(x => x.Id).Take(4).ToListAsync();
+            List<Testimonial> testimonials = await _context.Testimonials.OrderByDescending(x => x.Id).Take(3).ToListAsync();
             return View(testimonials);
         }
     }
