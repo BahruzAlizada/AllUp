@@ -751,6 +751,15 @@
     <!--====== Header Part Ends ======-->
             @RenderBody()
 
+    <!--====== Brand Part Start ======-->
+    <div class="brand-area pt-80">
+        <div class="container-fluid custom-container">
+            <div class="row brand-active">
+                @await Component.InvokeAsync("Brand")
+            </div>
+        </div>
+    </div>
+
     <!--====== Features Banner Part Start ======-->
 
     <section class="features-banner-area pt-80 pb-100">
