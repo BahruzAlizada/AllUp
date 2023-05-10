@@ -1,0 +1,15 @@
+﻿@model List<Testimonial>
+
+@foreach (Testimonial item in Model)
+{
+	<div class="single-testimonial d-sm-flex">
+		@*<div class="testimonial-author">
+			<img src="~/assets/images/author-1.png" alt="author">
+		</div>*@
+		<div class="testimonial-content media-body">
+			<p>@item.Description</p>
+			<h4 class="author-name">@item.FullName</h4>
+			<span class="designation">@item.Email</span>
+		</div>
+	</div> 
+}
