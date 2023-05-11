@@ -25,7 +25,8 @@ namespace Allup.Controllers
 		{
 			HomeVM homeVM = new HomeVM
 			{
-				Categories = await _db.Categories.Where(x=>x.IsMain).ToListAsync()
+				Categories = await _db.Categories.Where(x=>x.IsMain).Where(x=>!x.IsDeactive).ToListAsync(),
+				Blogs = await _db.Blogs.Where(x=>!x.IsDeactive).OrderByDescending(x=>x.Id).Take(6).ToListAsync(),
 			};
 			return View(homeVM);
 		}
