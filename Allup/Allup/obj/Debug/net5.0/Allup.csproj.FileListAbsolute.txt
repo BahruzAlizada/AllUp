@@ -154,3 +154,6 @@ C:\Users\Esma\Desktop\AllUp\Allup\Allup\bin\Debug\net5.0\runtimes\win\lib\netsta
 C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Views\Shared\Components\About\Default.cshtml.g.cs
 C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Views\Shared\Components\Testimonial\Default.cshtml.g.cs
 C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Views\Shared\Components\Brand\Default.cshtml.g.cs
+C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Views\Shared\_BlogLoadMorePartial.cshtml.g.cs
+C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Views\Shared\Components\Banner\Default.cshtml.g.cs
+C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Views\Shared\Components\Slider\Default.cshtml.g.cs

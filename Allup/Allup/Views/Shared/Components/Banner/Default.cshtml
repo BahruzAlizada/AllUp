@@ -1,0 +1,10 @@
+﻿@model List<Banner>
+
+@foreach (Banner banner in Model)
+{
+	<div class="col-md-6">
+		<div class="banner-image">
+			<a href="shop-4-column.html"><img src="~/assets/images/@banner.Image" alt="banner"></a>
+		</div> 
+	</div>
+}

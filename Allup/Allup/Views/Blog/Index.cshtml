@@ -6,7 +6,7 @@
         <div class="row flex-lg-row-reverse justify-content-end">
             <div class="col-lg-9">
                 <div class="blog-posts">
-                    <div class="row">
+                    <div class="row" id="myblog">
                         @foreach (Blog blog in Model)
                         {
                             <div class="col-md-6">
@@ -29,16 +29,13 @@
                             </div>
                         }  
                     </div>
-                </div> <!-- blog posts -->
+                </div> <!-- blog posts -->  
 
-                <ul class="pagination justify-content-center mt-30" id="pag">
-                    <li><a href="#"><i class="fal fa-chevron-left"></i></a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#"><i class="fal fa-chevron-right"></i></a></li>
-                </ul>
+                
+
             </div>
+
+           
 
             <div class="col-lg-3">
                 <div class="blog-sidebar">
@@ -125,24 +122,50 @@
                     </div>
                 </div> <!-- blog sidebar -->
             </div>
+
         </div> <!-- row -->
+
+        <div class="row flex-lg-row-reverse justify-content-end">
+
+            <div class="col-lg-9 justify-content-center my-4 d-flex">
+                <a id="loadMore" style="text-align:center;" class="btn btn-secondary text-white">Load More</a>
+                <input type="hidden" value="@ViewBag.BlogCount" />
+            </div>
+
+            <div class="col-lg-3">
+                
+            </div>
+           
+        </div>
+
     </div> <!-- container -->
 </section>
 
 <!--====== Blog Part Ends ======-->
 
-
 @section Scripts{
-    <script>
-        $('#pag').pagination({
-            dataSource: [1, 2, 3, 4, 5, 6, 7, ... , 35],
-            pageSize: 5,
-            autoHidePrevious: true,
-            autoHideNext: true,
-            callback: function (data, pagination) {
-                // template method of yourself
-                var html = template(data);
-                dataContainer.html(html);
-            }
-        })</script>
+    <script asp-append-version="true">
+        let skip = 6
+        let BlogCount = $("#loadMore").next().val()
+
+        $(document).on("click", "#loadMore", function () {
+            $.ajax({
+                url: "/Blog/Loadmore/",
+                type : "get",
+                data : 
+                {
+                    "skipCount" : skip
+                },
+                success: function (res) {
+                    $("#myblog").append(res);
+                    skip +=6;
+
+                    if(BlogCount <=skip){
+                        $("#loadMore").remove()
+                    }
+                }
+            });
+        });
+    </script>
 }
+
