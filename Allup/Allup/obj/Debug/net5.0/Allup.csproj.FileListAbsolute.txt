@@ -159,3 +159,4 @@ C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Views\Shared\Comp
 C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Views\Shared\Components\Slider\Default.cshtml.g.cs
 C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
 C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
+C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Views\Shared\Components\ContactInformation\Default.cshtml.g.cs

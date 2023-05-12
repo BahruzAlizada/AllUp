@@ -19,5 +19,7 @@ namespace Allup.DAL
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Banner> Banners { get; set; }
         public DbSet<Bio> Bios { get; set; }
+        public DbSet<ContactInformation> ContactInformations { get; set; }
+        public DbSet<ContactForm> ContactForms { get; set; }
     }
 }
