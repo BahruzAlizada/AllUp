@@ -27,11 +27,27 @@ namespace Allup.Controllers
 			{
 				Categories = await _db.Categories.Where(x=>x.IsMain).Where(x=>!x.IsDeactive).ToListAsync(),
 				Blogs = await _db.Blogs.Where(x=>!x.IsDeactive).OrderByDescending(x=>x.Id).Take(6).ToListAsync(),
+				NewsletterInformation = await _db.NewsletterInformations.FirstOrDefaultAsync()
 			};
 			return View(homeVM);
 		}
 
-		public IActionResult Error()
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> Index(string Email)
+        {
+			NewsletterForm form = new NewsletterForm
+			{
+				Email=Email,
+			};
+
+			await _db.NewsletterForms.AddAsync(form);
+			await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Error()
 		{
 			return View();
 		}

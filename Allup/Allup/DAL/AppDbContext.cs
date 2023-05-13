@@ -21,5 +21,7 @@ namespace Allup.DAL
         public DbSet<Bio> Bios { get; set; }
         public DbSet<ContactInformation> ContactInformations { get; set; }
         public DbSet<ContactForm> ContactForms { get; set; }
+        public DbSet<NewsletterInformation> NewsletterInformations { get; set; }
+        public DbSet<NewsletterForm> NewsletterForms { get; set; }
     }
 }
