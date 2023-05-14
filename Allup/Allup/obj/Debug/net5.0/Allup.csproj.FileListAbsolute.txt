@@ -168,3 +168,7 @@ C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Areas\Admin\Views
 C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Areas\Admin\Views\Categories\Index.cshtml.g.cs
 C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Areas\Admin\Views\Categories\Create.cshtml.g.cs
 C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Areas\Admin\Views\Categories\Update.cshtml.g.cs
+C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Areas\Admin\Views\Banners\Index.cshtml.g.cs
+C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Areas\Admin\Views\Banners\Update.cshtml.g.cs
+C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Areas\Admin\Views\Banners\Create.cshtml.g.cs
+C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Areas\Admin\Views\Banners\Delete.cshtml.g.cs

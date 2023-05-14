@@ -24,12 +24,14 @@ namespace Allup.Areas.Admin.Controllers
             _db = db;
         }
 
+        #region Index
         public async Task<IActionResult> Index()
         {
-            List<Category> categories = await _db.Categories.OrderByDescending(x => x.IsMain).Include(x=>x.Children).
-                                                                                Include(X=>X.Children).ToListAsync();
+            List<Category> categories = await _db.Categories.OrderByDescending(x => x.IsMain).Include(x => x.Children).
+                                                                                Include(X => X.Children).ToListAsync();
             return View(categories);
         }
+        #endregion
 
         #region Create
         public async Task<IActionResult> Create()
@@ -56,7 +58,7 @@ namespace Allup.Areas.Admin.Controllers
                 #endregion
 
                 #region Image
-                if (category.Photo != null)
+                if (category.Photo == null)
                 {
                     ModelState.AddModelError("Photo", "Photo can not be null");
                     return View();
@@ -117,20 +119,15 @@ namespace Allup.Areas.Admin.Controllers
             if (dbcategory == null)
                 return BadRequest();
 
+          
 
             if (dbcategory.IsMain)
             {
                 #region Exist
-                
-                if(category.CategoryName == null)
-                {
-                    ModelState.AddModelError("CategoryName", "Category Name can not be null");
-                    return View();
-                }
-                bool isExist = await _db.Categories.AnyAsync(x => x.CategoryName == category.CategoryName);
+                bool isExist = await _db.Categories.Where(x => x.IsMain).AnyAsync(x => x.CategoryName == category.CategoryName && x.Id != id);
                 if (isExist)
                 {
-                    ModelState.AddModelError("CategoryName","This category already is exist");
+                    ModelState.AddModelError("CategoryName", "This category already is exist ");
                     return View();
                 }
                 #endregion
@@ -158,13 +155,14 @@ namespace Allup.Areas.Admin.Controllers
                     dbcategory.Image = category.Image;
                 }
                 #endregion
-
+                dbcategory.CategoryName = category.CategoryName;
             }
             else
             {
-                category.ParentId = catId;
+                dbcategory.ParentId = catId;
+                dbcategory.CategoryName = category.CategoryName;
             }
-            dbcategory.CategoryName = category.CategoryName;
+            
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

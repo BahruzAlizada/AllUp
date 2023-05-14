@@ -19,7 +19,7 @@ namespace Allup.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            List<Banner> banners = await _context.Banners.Take(2).ToListAsync();
+            List<Banner> banners = await _context.Banners.Where(x=>!x.IsDeactive).OrderByDescending(x=>x.Id).Take(2).ToListAsync();
             return View(banners);
         }
     }
