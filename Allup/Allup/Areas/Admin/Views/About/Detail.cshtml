@@ -1,0 +1,30 @@
+﻿@model About
+
+<img src="~/assets/images/@Model.Image" style="height:300px;width:300px;object-fit:cover" />
+
+<div>
+	<h2>Title</h2>
+	<p>@Model.Title</p>
+</div>
+
+<div>
+	<h2>Description</h2>
+	<p>@Html.Raw(Model.Description)</p>
+</div>
+
+<div>
+	<h2>Company Description</h2>
+	<p>@Html.Raw(Model.CompanyDescription)</p>
+</div>
+
+<div>
+	<h2>Team Description</h2>
+	<p>@Html.Raw(Model.TeamDescription)</p>
+</div>
+
+<div>
+	<h2>Testimonial Description</h2>
+	<p>@Html.Raw(Model.TestimonialDescription)</p>
+</div>
+
+<a class="btn btn-secondary" asp-action="Index">Go Back</a>
