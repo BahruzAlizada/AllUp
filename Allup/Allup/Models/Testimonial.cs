@@ -13,5 +13,6 @@ namespace Allup.Models
         [Required(ErrorMessage ="Email can not be null")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+        public bool IsDeactive { get; set; }
     }
 }
