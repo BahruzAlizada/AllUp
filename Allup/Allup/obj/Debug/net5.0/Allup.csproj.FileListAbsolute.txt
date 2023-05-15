@@ -183,3 +183,6 @@ C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Areas\Admin\Views
 C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Areas\Admin\Views\Brands\Index.cshtml.g.cs
 C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Areas\Admin\Views\Brands\Create.cshtml.g.cs
 C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Areas\Admin\Views\Brands\Update.cshtml.g.cs
+C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Areas\Admin\Views\Bio\Index.cshtml.g.cs
+C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Areas\Admin\Views\Bio\Detail.cshtml.g.cs
+C:\Users\Esma\Desktop\AllUp\Allup\Allup\obj\Debug\net5.0\Razor\Areas\Admin\Views\Bio\Update.cshtml.g.cs

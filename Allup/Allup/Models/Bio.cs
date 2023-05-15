@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Allup.Models
 {
@@ -8,6 +10,8 @@ namespace Allup.Models
         public int Id { get; set; }
         public string HeaderDescription { get; set; }
         public string HeaderImage { get; set; }
+        [NotMapped]
+        public IFormFile Photo { get; set; }
         public string HeaderPhone { get; set; }
         public string FooterAddress { get; set; }
         public string FooterPhone { get; set; }

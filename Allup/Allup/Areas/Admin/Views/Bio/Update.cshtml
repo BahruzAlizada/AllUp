@@ -1,0 +1,94 @@
+﻿@model Bio
+
+<div class="row">
+    <div class="col-8">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Update Bio</h5>
+
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+
+                    <div class="mb-3 form-group">
+                        <label asp-for="Photo" class="form-label">Photo</label>
+                        <input asp-for="Photo" accept="image/*" class="form-control" />
+                        <span class="text-danger" asp-validation-for="Photo"></span>
+                    </div>
+
+                    <div class="mb-3 form-group">
+                        <label asp-for="HeaderDescription" class="form-label">Header Description</label>
+                        <textarea asp-for="HeaderDescription" id="editor" class="form-control"></textarea>
+                        <span class="text-danger" asp-validation-for="HeaderDescription"></span>
+                    </div>
+
+                    <div class="mb-3 form-group">
+                        <label asp-for="HeaderPhone" class="form-label">Header Phone</label>
+                        <input asp-for="HeaderPhone" class="form-control" />
+                        <span class="text-danger" asp-validation-for="HeaderPhone"></span>
+                    </div>
+
+                    <div class="mb-3 form-group">
+                        <label asp-for="FooterAddress" class="form-label">Footer Address</label>
+                        <input asp-for="FooterAddress" class="form-control" />
+                        <span class="text-danger" asp-validation-for="FooterAddress"></span>
+                    </div>
+
+                    <div class="mb-3 form-group">
+                        <label asp-for="FooterPhone" class="form-label">Footer Number</label>
+                        <input asp-for="FooterPhone" class="form-control" />
+                        <span class="text-danger" asp-validation-for="FooterPhone"></span>
+                    </div>
+
+                    <div class="mb-3 form-group">
+                        <label asp-for="FooterEmail" class="form-label">Footer Email</label>
+                        <input asp-for="FooterEmail" class="form-control" />
+                        <span class="text-danger" asp-validation-for="FooterEmail"></span>
+                    </div>
+
+                    <div class="mb-3 form-group">
+                        <label asp-for="FooterOpenDay" class="form-label">Footer Open Day</label>
+                        <input asp-for="FooterOpenDay" type="date" class="form-control" />
+                        <span class="text-danger" asp-validation-for="FooterOpenDay"></span>
+                    </div>
+
+                    <div class="mb-3 form-group">
+                        <label asp-for="FooterOpenTime" class="form-label">Footer Open Time</label>
+                        <input asp-for="FooterOpenTime" type="time" class="form-control" />
+                        <span class="text-danger" asp-validation-for="FooterOpenTime"></span>
+                    </div>
+
+                    <div class="mb-3 form-group">
+                        <label asp-for="FooterCloseDay" class="form-label">Footer Close Day</label>
+                        <input asp-for="FooterCloseDay" type="date" class="form-control" />
+                        <span class="text-danger" asp-validation-for="FooterCloseDay"></span>
+                    </div>
+
+                    <div class="mb-3 form-group">
+                        <label asp-for="FooterCloseTime" class="form-label">Footer Close Time</label>
+                        <input asp-for="FooterCloseTime" type="time" class="form-control" />
+                        <span class="text-danger" asp-validation-for="FooterCloseTime"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a class="btn btn-secondary" asp-action="Index">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/37.1.0/classic/ckeditor.js"></script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
+}

@@ -1,0 +1,13 @@
+﻿@model Bio
+<img src="~/assets/images/@Model.HeaderImage" style="height:60px;width:190px; object-fit:cover;"  />
+<p>@Html.Raw(Model.HeaderDescription)</p>
+<p>+@Model.HeaderPhone</p>
+
+<p>@Model.FooterAddress</p>
+<p>+@Model.FooterPhone</p>
+<p>@Model.FooterEmail</p>
+<p>@Model.FooterOpenDay.ToString("dddd") @Model.FooterOpenTime.ToShortTimeString()
+	@Model.FooterCloseTime.ToShortTimeString() @Model.FooterCloseDay.ToString("dddd")
+</p>
+
+<a asp-action="Index" class="btn btn-secondary">Go Back</a>
