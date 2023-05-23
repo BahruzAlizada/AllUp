@@ -23,5 +23,8 @@ namespace Allup.DAL
         public DbSet<ContactForm> ContactForms { get; set; }
         public DbSet<NewsletterInformation> NewsletterInformations { get; set; }
         public DbSet<NewsletterForm> NewsletterForms { get; set; }
+        public DbSet<BlogDetail> BlogDetails { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<Comment> Comments { get; set; }
     }
 }

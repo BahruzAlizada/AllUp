@@ -11,6 +11,7 @@ namespace Allup.Models
 		public string Author { get; set; }
 		public DateTime CreatedTime { get; set; }
 		public bool IsDeactive { get; set; }
+		public BlogDetail Detail { get; set; }
 	}
 
 	
