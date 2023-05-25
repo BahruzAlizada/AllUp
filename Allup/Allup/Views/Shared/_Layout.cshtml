@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="~/assets/css/plugins/bootstrap.min.css">
     <link rel="stylesheet" href="~/assets/css/plugins/ionicons.min.css">
     <link rel="stylesheet" href="~/assets/css/plugins/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    @RenderSection("Script",false)
 
     <!--===== Plugins CSS (All Plugins Files) =====-->
 
@@ -122,8 +124,28 @@
     </section>
 
     <!--====== Features Banner Part Ends ======-->
+    <!--====== Newsletter Part Start ======-->
+    <section class="newsletter-area pt-100 pb-100 bg_cover" style="background-image: url(../assets/images/@Model.NewsletterInformation.Image)">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-lg-8">
+                    <div class="newsletter-content">
+                        <h2 class="newsletter-title">@Model.NewsletterInformation.Title</h2>
+                        <p>@Model.NewsletterInformation.Description</p>
 
-   
+                        <div class="newsletter-forn">
+                            <form>
+                                <input type="email" placeholder="Your Email address">
+                                <a id="subBTN" class="main-btn text-white">Subscripe</a>
+                            </form>
+                            <div class="text-danger" id="error"></div>
+                        </div>
+                    </div> <!-- newsletter content -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    <!--====== Newsletter Part Ends ======-->
 
     <!--====== Footer Part Start ======-->
     @await Component.InvokeAsync("Footer")
@@ -292,7 +314,22 @@
     <!--====== Main Activation js ======-->
     <script src="~/assets/js/main.js"></script>
 
-
+    <script>
+        $(document).on("click","#subBTN",function(){
+            $("#error").empty()
+           
+            $.ajax({
+                url:"/Home/Subscripe/",
+                type:"get",
+                data:{
+                    "email":$("#subBTN").prev().val()
+                },
+                success:function (res){
+                   $("#error").append(res);
+                }
+            })
+        });
+    </script>
 
 
 </body>

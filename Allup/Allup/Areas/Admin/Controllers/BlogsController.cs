@@ -17,10 +17,16 @@ namespace Allup.Areas.Admin.Controllers
             _db = db;
         }
 
+        #region Index
         public async Task<IActionResult> Index()
         {
-            List<Blog> blogs = await _db.Blogs.Include(x=>x.Detail).ThenInclude(x=>x.BlogTags).ThenInclude(x=>x.Tag).ToListAsync();
+            List<Blog> blogs = await _db.Blogs.Include(x => x.Detail).ThenInclude(x => x.BlogTags).ThenInclude(x => x.Tag).ToListAsync();
             return View(blogs);
         }
+        #endregion
+
+        #region Create
+        
+        #endregion
     }
 }
