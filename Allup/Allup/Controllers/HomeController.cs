@@ -63,8 +63,6 @@ namespace Allup.Controllers
 
                 List<NewsletterForm> forms = await _db.NewsletterForms.ToListAsync();
                 string message = "Yeni blog və productlarla tanış olmaq üçün səhifəmizə daxil ola bilərsiniz";
-                 
-                    
                 string title = "Salam Əziz İzləyicimiz";
                 foreach (NewsletterForm sub in forms)
                 {

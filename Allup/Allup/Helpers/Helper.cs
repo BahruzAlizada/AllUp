@@ -21,7 +21,6 @@ namespace Allup.Helpers
             message.IsBodyHtml = true;
 
             await client.SendMailAsync(message);
-
         }
 
     }

@@ -1,0 +1,46 @@
+﻿@model List<Tag>
+
+<hr class="my-5" />
+
+<!-- Bordered Table -->
+<div class="card">
+	<div class="card-header" style="display:flex;justify-content:space-between">
+		<h2>
+			Tags
+		</h2>
+		<div>
+			<a asp-action="Create" class="btn btn-primary rounded-pill text-white" style="margin-right:10px">Create</a>
+		</div>
+	</div>
+	<div class="card-body">
+		<div class="table-responsive text-nowrap">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Tags Name</th>	
+						<th style="text-align:center">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (Tag item in Model)
+					{
+						<tr>
+
+							<td>@item.Name</td>
+							
+
+							<td>
+								<div style="display:flex;justify-content:flex-end">
+									<a asp-action="Update" asp-route-id="@item.Id" class="btn btn-info rounded-pill text-white" style="margin-right:10px">Update</a>
+								</div>
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!--/ Bordered Table -->
+
+<hr class="my-5" />

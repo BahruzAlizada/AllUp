@@ -1,4 +1,4 @@
-﻿@model List<NewsletterForm>
+﻿@model List<Blog>
 
 <hr class="my-5" />
 
@@ -6,30 +6,30 @@
 <div class="card">
 	<div class="card-header" style="display:flex;justify-content:space-between">
 		<h2>
-			
-			Newsletter Form
+			Blogs
 		</h2>
-		@*<div>
+		<div>
 			<a asp-action="Create" class="btn btn-primary rounded-pill text-white" style="margin-right:10px">Create</a>
-		</div>*@
+		</div>
 	</div>
 	<div class="card-body">
 		<div class="table-responsive text-nowrap">
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						
-						<th>Email</th>
+						<th>Image</th>
+						<th>Title</th>
+						<th>Author</th>
 						<th style="text-align:center">Actions</th>
 					</tr>
 				</thead>
 				<tbody>
-					@foreach (NewsletterForm item in Model)
+					@foreach (Blog item in Model)
 					{
 						<tr>
-
-							 
-							<td>@item.Email</td>
+							<td><img src="~/assets/images/@item.Image" style="height:90px;width:180px;object-fit:cover; border-radius:0px;" /></td>
+							<td>@item.Title</td>
+							<td>@item.Author</td>
 
 							<td style="text-align:center">
 								@if (item.IsDeactive)
@@ -44,8 +44,8 @@
 
 							<td>
 								<div style="display:flex;justify-content:flex-end">
-@*									<a asp-action="Send" asp-route-id="@item.Id" class="btn btn-warning rounded-pill text-white" style="margin-right:10px">Send</a>
-*@									
+									<a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-warning rounded-pill text-white" style="margin-right:10px">Detail</a>
+									<a asp-action="Update" asp-route-id="@item.Id" class="btn btn-info rounded-pill text-white" style="margin-right:10px">Update</a>
 									@if (item.IsDeactive)
 									{
 										<a asp-action="Activity" asp-route-id="@item.Id" class="btn btn-success rounded-pill text-white" style="margin-right:10px">Activate</a>
@@ -53,7 +53,7 @@
 									else
 									{
 										<a asp-action="Activity" asp-route-id="@item.Id" class="btn btn-danger rounded-pill text-white" style="margin-right:10px">Deactivate</a>
-									}
+									}	
 								</div>
 							</td>
 						</tr>
